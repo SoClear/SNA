@@ -1,7 +1,6 @@
 package cool.cmg.sna
 
 import android.content.Context
-import android.util.Log
 import cool.cmg.sna.accessibility.click
 import cool.cmg.sna.capture.MediaProjectionService
 import cool.cmg.sna.opencv.gray
@@ -67,8 +66,6 @@ class Game(context: Context) {
         SPACE
     }
 
-    private val TAG = "Game"
-
     suspend fun start() = withContext(Dispatchers.Default) {
         startDialogs()
         while (isActive){
@@ -96,6 +93,7 @@ class Game(context: Context) {
             delay(2000)
             // 没问题的话，请支付100噗灵玩游戏吧。
             click()
+            delay(300)
         }
     }
 
